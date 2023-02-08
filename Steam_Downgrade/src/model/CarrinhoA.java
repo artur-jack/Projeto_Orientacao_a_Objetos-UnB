@@ -1,5 +1,6 @@
 package model;
 import static interface_grafica.Carrinho.listadejogos;
+import static interface_grafica.Carrinho.selExc;
 import static interface_grafica.Carrinho.txtNome1;
 import static interface_grafica.Carrinho.txtNome10;
 import static interface_grafica.Carrinho.txtNome11;
@@ -21,12 +22,12 @@ import static interface_grafica.Carrinho.txtValor5;
 import static interface_grafica.Carrinho.txtValor7;
 import static interface_grafica.Carrinho.txtValor8;
 import static interface_grafica.Carrinho.txtValor9;
-import static interface_grafica.Tela_ListaDesejo.selExc;
+
 import java.util.ArrayList;
 
 public class CarrinhoA{
     
-public static boolean verifica(int x){
+public static boolean verifica(int x){ /*vê quantos elementos tem na arraylist*/
     if(listadejogos.size()>x){
         return true;
     }else{
@@ -35,10 +36,10 @@ public static boolean verifica(int x){
 }
 
    public static void RemoverdoCarrinho(){
-       String escolha= selExc.getSelectedItem().toString();
-        System.out.println(escolha);
+        String escolha= selExc.getSelectedItem().toString(); 
+        /*verifica a escolha e o numero de elementos*/
         
-        if(escolha.equals("Jogo 1")&& listadejogos.size()>=1){
+       if(escolha.equals("Jogo 1")&& listadejogos.size()>=1){
             listadejogos.remove(0);
         }else if (escolha.equals("Jogo 2")&& listadejogos.size()>=2){
             listadejogos.remove(1);
@@ -69,78 +70,99 @@ public static boolean verifica(int x){
    }
  
    public static void MostrarnoCarrinho(){
-       float subt = 0;
-        txtSubtotal.setText( Float.toString(subt));
+        float subt = 0f;
+        txtSubtotal.setText( Float.toString(subt));/*variavel q calcula o preço total*/
 
-        if(listadejogos.isEmpty()){
+        if(listadejogos.isEmpty()){ /*pega o valor e o nome de acordo com a quantidade de elementos*/
 
         }else{txtNome1.setText(listadejogos.get(0).getNome());
             txtValor1.setText(Float.toString(listadejogos.get(0).getValor()));
             subt = listadejogos.get(0).getValor();
+            subt = (float) (Math.round(subt * 100f) / 100f);
             txtSubtotal.setText(Float.toString(subt));
+            txtValor1.setVisible(true);
         }
 
-        if(CarrinhoA.verifica(1)){
+        if(verifica(1)){
             txtNome2.setText(listadejogos.get(1).getNome());
             txtValor2.setText(Float.toString(listadejogos.get(1).getValor()));
             subt = subt + listadejogos.get(1).getValor();
+            subt = (float) (Math.round(subt * 100f) / 100f); /*usando o método Math.round para arredondar o valor da variável para 2 casas decimais*/
             txtSubtotal.setText(Float.toString(subt));
+            txtValor2.setVisible(true);
         }
 
-        if(CarrinhoA.verifica(2)){
+        if(verifica(2)){
             txtNome3.setText(listadejogos.get(2).getNome());
             txtValor3.setText(Float.toString(listadejogos.get(2).getValor()));
             subt = subt + listadejogos.get(2).getValor();
+            subt = (float) (Math.round(subt * 100f) / 100f);
             txtSubtotal.setText(Float.toString(subt));
+            txtValor3.setVisible(true);
         }
 
-        if(CarrinhoA.verifica(3)){
+        if(verifica(3)){
             txtNome4.setText(listadejogos.get(3).getNome());
             txtValor4.setText(Float.toString(listadejogos.get(3).getValor()));
             subt = subt + listadejogos.get(3).getValor();
+            subt = (float) (Math.round(subt * 100f) / 100f);
             txtSubtotal.setText(Float.toString(subt));
+            txtValor4.setVisible(true);
         }
         
-        if(CarrinhoA.verifica(4)){
+        if(verifica(4)){
             txtNome5.setText(listadejogos.get(4).getNome());
             txtValor5.setText(Float.toString(listadejogos.get(4).getValor()));
             subt = subt + listadejogos.get(4).getValor();
+            subt = (float) (Math.round(subt * 100f) / 100f);
             txtSubtotal.setText(Float.toString(subt));
+            txtValor5.setVisible(true);
         }
         
-        if(CarrinhoA.verifica(5)){
+        if(verifica(5)){
             txtNome7.setText(listadejogos.get(5).getNome());
             txtValor7.setText(Float.toString(listadejogos.get(5).getValor()));
             subt = subt + listadejogos.get(5).getValor();
+            subt = (float) (Math.round(subt * 100f) / 100f);
             txtSubtotal.setText(Float.toString(subt));
+            txtValor7.setVisible(true);
         }
         
-        if(CarrinhoA.verifica(6)){
+        if(verifica(6)){
             txtNome8.setText(listadejogos.get(6).getNome());
             txtValor8.setText(Float.toString(listadejogos.get(6).getValor()));
             subt = subt + listadejogos.get(6).getValor();
+            subt = (float) (Math.round(subt * 100f) / 100f);
             txtSubtotal.setText(Float.toString(subt));
+            txtValor8.setVisible(true);
         }
         
-        if(CarrinhoA.verifica(7)){
+        if(verifica(7)){
             txtNome9.setText(listadejogos.get(7).getNome());
             txtValor9.setText(Float.toString(listadejogos.get(7).getValor()));
             subt = subt + listadejogos.get(7).getValor();
+            subt = (float) (Math.round(subt * 100f) / 100f);
             txtSubtotal.setText(Float.toString(subt));
+            txtValor9.setVisible(true);
+            
         }
         
-        if(CarrinhoA.verifica(8)){
+        if(verifica(8)){
             txtNome10.setText(listadejogos.get(8).getNome());
             txtValor10.setText(Float.toString(listadejogos.get(8).getValor()));
             subt = subt + listadejogos.get(8).getValor();
+            subt = (float) (Math.round(subt * 100f) / 100f);
             txtSubtotal.setText(Float.toString(subt));
+            txtValor10.setVisible(true);
         }
         
-        if(CarrinhoA.verifica(9)){
+        if(verifica(9)){
             txtNome11.setText(listadejogos.get(9).getNome());
             txtValor11.setText(Float.toString(listadejogos.get(9).getValor()));
             subt = subt + listadejogos.get(8).getValor();
+            subt = (float) (Math.round(subt * 100f) / 100f);
             txtSubtotal.setText(Float.toString(subt));
+            txtValor11.setVisible(true);
         }
    }    
 }

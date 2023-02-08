@@ -8,7 +8,9 @@ import Controle.JogoDAO;
 import static interface_grafica.Carrinho.txtSubtotal;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import static java.lang.Float.parseFloat;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import model.Jogo;
 import model.Pagamento;
 
@@ -25,7 +27,9 @@ public class Tela_PCartao extends javax.swing.JFrame {
         initComponents();Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width/2 - getWidth()/2,size.height/2 - getHeight()/2);
-        txtValor.setText(txtSubtotal.getText());
+        float total;
+        total = parseFloat(txtSubtotal.getText());
+        txtValor.setText( String.format("%.2f", total));
     }
 
     /**
@@ -49,7 +53,7 @@ public class Tela_PCartao extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         txtValor = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setResizable(false);
 
         jLabel1.setFont(new java.awt.Font("sansserif", 1, 16)); // NOI18N
@@ -145,6 +149,10 @@ public class Tela_PCartao extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        if(jTextField1.getText().equals("") || jTextField2.getText().equals("") || jTextField3.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "Preencha todos os campos");
+        }else{
+
         JogoDAO jogodao = new JogoDAO();
         ArrayList<Jogo> lj1 = jogodao.listJogos();
         
@@ -155,48 +163,19 @@ public class Tela_PCartao extends javax.swing.JFrame {
         x.setVisible(true);
         
         Tela_PagamentoB y = new Tela_PagamentoB();
-        y.setVisible(false);
+        y.setVisible(false);}
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+         Tela_PagamentoB a = new Tela_PagamentoB();
         this.dispose();
+        a.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Tela_PCartao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Tela_PCartao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Tela_PCartao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Tela_PCartao.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Tela_PCartao().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

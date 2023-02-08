@@ -43,58 +43,7 @@ public class Tela_Biblioteca extends javax.swing.JFrame {
             jLabel1.setText(perfil.get(0).getNome());
         }
         
-        if(listabiblioteca.isEmpty()){
-        
-        }else{
-            
-            //verificaimg1(listabiblioteca.get(0).getId());
-        }
-        /*
-        if(verifica(1)){
-        //verificaimg2(listabiblioteca.get(1).getId());
-            
-        }
-        
-        if(verifica(2)){
-        //verificaimg3(listabiblioteca.get(2).getId());
-        }
-        
-        if(verifica(3)){
-        //verificaimg4(listabiblioteca.get(3).getId());
-        }
-        
-        if(verifica(4)){
-         //verificaimg5(listabiblioteca.get(4).getId());
-        }
-        
-        if(verifica(5)){
-         //verificaimg6(listabiblioteca.get(5).getId());
-        }
-        
-        if(verifica(6)){
-        //verificaimg7(listabiblioteca.get(6).getId());
-        }
-        
-        if(verifica(7)){
-        //verificaimg8(listabiblioteca.get(7).getId());
-        }
-        
-        if(verifica(8)){
-        //verificaimg9(listabiblioteca.get(8).getId());
-        }
-        
-        if(verifica(9)){
-       // verificaimg10(listabiblioteca.get(9).getId());
-        }
-        
-        */
-       
-        //System.out.println(listabiblioteca.size());
-        
-        
-        
-        
-        
+  
     }
 
     /**
@@ -348,37 +297,7 @@ public class Tela_Biblioteca extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Tela_Biblioteca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Tela_Biblioteca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Tela_Biblioteca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Tela_Biblioteca.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Tela_Biblioteca().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel A;
@@ -402,13 +321,7 @@ public class Tela_Biblioteca extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     
   
-private boolean verifica(int x){
-    if(listabiblioteca.size()>x){
-        return true;
-    }else{
-        return false;
-    }
-}
+
 
 private void verificaimg1(int idx){
     if(idx == 1){
@@ -1076,9 +989,6 @@ private void listacompras(String Senha){
             //Joga o objeto num array para poder mostra-lo numa tabela
            
             ArrayList<Jogo> novalista = novo.ListaComprasJogos(Senha);
-            
-            
-            
             
              verificaimg1(novalista.get(0).getId());
              verificaimg2(novalista.get(1).getId());

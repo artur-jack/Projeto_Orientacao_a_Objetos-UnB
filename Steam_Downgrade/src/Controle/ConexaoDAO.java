@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class ConexaoDAO {
     
-    public static Connection conectaBD(){
+    public static Connection conectaBD(){/*Faz a conexão com o banco de dados mysql local*/
        Connection conn = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
