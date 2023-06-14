@@ -42,6 +42,7 @@
     </td>
   </tr>
 </table>
+
 ## 🖥️ Screenshots
 <table>
   <tr>
